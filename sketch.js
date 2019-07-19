@@ -25,12 +25,31 @@ Extra credit:
 
 */
 
-function preload() {
+var shipX, shipY
+var shipImage;
 
+function preload() {
+  shipImage = loadImage('images/shipupdate.png');
 }
 
 function setup() {
+  createCanvas(500, 500);
+  shipX = width/2 - 50
+  shipY = height - 100
+
 }
 
 function draw() {
+  background("black");
+  image(shipImage, shipX, shipY);
+
+  // rect(shipX, height - 100, 50, 100);
+
+  if (keyIsPressed){
+    shipX = shipX -1
+  }
+  if (mouseIsPressed){
+    shipX = shipX +1
+  }
 }
+
